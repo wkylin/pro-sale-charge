@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Form, Radio, Tooltip, Space } from 'antd'
 import { QuestionCircleOutlined } from '@ant-design/icons'
 import SaleChargeRate from './saleChargeRate'
-
+const FormItemLayout = {
+  labelCol: { span: 5 },
+  wrapperCol: { span: 15 },
+}
 const SaleCharge = ({
   saleCharge,
   disabledPurchaseGap,
@@ -77,6 +80,7 @@ const SaleCharge = ({
   return (
     <Form name="basic">
       <Form.Item
+        {...FormItemLayout}
         name="salesChargeType"
         label="促销扣款"
         initialValue={chargeType}
