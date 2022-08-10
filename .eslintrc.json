@@ -1,0 +1,49 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "standard", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "semi": "off",
+    "no-use-before-define": "off",
+    "comma-dangle": "off",
+    "space-before-function-paren": "off",
+    "multiline-ternary": "off",
+    "promise/param-names": "off",
+    "no-debugger": "off",
+    "react/prop-types": "off",
+    "no-extra-parens": "off",
+    "eol-last": "off",
+    "jsx-quotes": "off",
+    "space-before-blocks": "off",
+    "max-len": "off",
+    "strict": "off",
+    "standard/no-callback-literal": "off",
+    "no-undef": "warn",
+    "node/no-callback-literal": "off",
+    "n/no-callback-literal": "warn"
+  }
+}

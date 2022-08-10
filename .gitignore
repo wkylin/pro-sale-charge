@@ -1,0 +1,10 @@
+.DS_Store
+/.idea
+/dist
+/node_modules
+/.eslintcache
+/compilation-stats.json
+
+./**/**/dist
+./**/dist
+dist/

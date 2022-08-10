@@ -1,0 +1,8 @@
+node_modules/**
+CHANGELOG.md
+package-lock.json
+dist/**
+build/**
+coverage
+*.dev.js
+*.json.js
