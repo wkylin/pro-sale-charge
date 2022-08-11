@@ -1,3 +1,3 @@
 import SaleCharge from './components/saleCharge/index.js'
 
-module.exports = SaleCharge
+export default SaleCharge

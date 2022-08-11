@@ -30,7 +30,7 @@ const prodWebpackConfig = merge(common, {
   },
   output: {
     filename: '[name].js',
-    chunkFilename: 'static/js/[name].[contenthash].js',
+    // chunkFilename: 'static/js/[name].[contenthash].js',
     library: 'pro-sale-charge',
     libraryTarget: 'umd',
     libraryExport: 'default',
