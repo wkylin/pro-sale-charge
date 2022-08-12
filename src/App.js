@@ -4,13 +4,6 @@ const App = () => {
   return (
     <>
       <SaleCharge
-        disabledPurchaseGap
-        wrapperCol={{ span: 15, offset: 5 }}
-        saleCharge={{ saleschargetype: 2, salechargerate: 1 }}
-        purchaseGapTips="禁用状态"
-        saleChargeExtra="供应商承担比例显示提示文案"
-      />
-      <SaleCharge
         isDisabled
         forceZero={false}
         wrapperCol={{ span: 15, offset: 5 }}
