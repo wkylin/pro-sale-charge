@@ -28,6 +28,10 @@ const prodWebpackConfig = merge(common, {
     // app: paths.src + '/components/saleCharge/index.js',
     main: paths.src + '/main.js',
   },
+  externals: {
+    'react': 'react',
+    'react-dom': 'react-dom'
+  },
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].js',
@@ -35,6 +39,7 @@ const prodWebpackConfig = merge(common, {
     library: 'pro-sale-charge',
     libraryTarget: 'umd',
     libraryExport: 'default',
+    umdNamedDefine: true
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -66,60 +71,60 @@ const prodWebpackConfig = merge(common, {
     //   },
     // }),
   ],
-  // optimization: {
-  //   minimize: true,
-  //   minimizer: [
-  //     new CssMinimizerPlugin(),
-  //     new TerserPlugin({
-  //       terserOptions: {
-  //         ecma: undefined,
-  //         parse: {},
-  //         compress: {},
-  //         mangle: true,
-  //         module: false,
-  //         output: null,
-  //         format: null,
-  //         toplevel: false,
-  //         nameCache: null,
-  //         ie8: false,
-  //         keep_classnames: undefined,
-  //         keep_fnames: false,
-  //         safari10: false,
-  //       },
-  //     }),
-  //   ],
-  //   splitChunks: {
-  //     chunks: 'all',
-  //     minChunks: 3,
-  //     maxAsyncRequests: 6,
-  //     maxInitialRequests: 4,
-  //     automaticNameDelimiter: '~',
-  //     cacheGroups: {
-  //       vendor: {
-  //         test: regVendor,
-  //         name: 'vendor',
-  //         minChunks: 1,
-  //         priority: 10,
-  //         enforce: true,
-  //         chunks: 'all',
-  //       },
-  //       react: {
-  //         test(module) {
-  //           // `module.resource` contains the absolute path of the file on disk.
-  //           return module.resource && module.resource.includes('node_modules/react')
-  //         },
-  //         chunks: 'initial',
-  //         filename: 'react.[contenthash].js',
-  //         priority: 1,
-  //         maxInitialRequests: 2,
-  //         minChunks: 1,
-  //       },
-  //     },
-  //   },
-  //   runtimeChunk: {
-  //     name: 'runtime',
-  //   },
-  // },
+  optimization: {
+    minimize: true,
+    // minimizer: [
+    //   new CssMinimizerPlugin(),
+    //   new TerserPlugin({
+    //     terserOptions: {
+    //       ecma: undefined,
+    //       parse: {},
+    //       compress: {},
+    //       mangle: true,
+    //       module: false,
+    //       output: null,
+    //       format: null,
+    //       toplevel: false,
+    //       nameCache: null,
+    //       ie8: false,
+    //       keep_classnames: undefined,
+    //       keep_fnames: false,
+    //       safari10: false,
+    //     },
+    //   }),
+    // ],
+    splitChunks: {
+      chunks: 'all',
+      minChunks: 3,
+      maxAsyncRequests: 6,
+      maxInitialRequests: 4,
+      automaticNameDelimiter: '~',
+      cacheGroups: {
+        vendor: {
+          test: regVendor,
+          name: 'vendor',
+          minChunks: 1,
+          priority: 10,
+          enforce: true,
+          chunks: 'all',
+        },
+        react: {
+          test(module) {
+            // `module.resource` contains the absolute path of the file on disk.
+            return module.resource && module.resource.includes('node_modules/react')
+          },
+          chunks: 'initial',
+          filename: 'react.[contenthash].js',
+          priority: 1,
+          maxInitialRequests: 2,
+          minChunks: 1,
+        },
+      },
+    },
+    // runtimeChunk: {
+    //   name: 'runtime',
+    // },
+  },
   // performance: {
   //   hints: false,
   //   maxEntrypointSize: 512000,
