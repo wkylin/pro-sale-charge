@@ -56,36 +56,36 @@ console.log(chalk.green(`dotEnv: ${dotEnv}`))
 // console.log(chalk.green(`process.env: ${JSON.stringify(process.env, null, 2)}`))
 
 const config = {
-  entry: {
-    app: paths.src + '/index.js',
-  },
+  // entry: {
+  //   app: paths.src + '/index.js',
+  // },
   output: {
     path: paths.build,
-    publicPath: '/',
+    // publicPath: '/',
   },
-  resolve: {
-    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
-    alias: {
-      '@src': path.resolve('./src'),
-      '@stateless': path.resolve('./src/components/stateless'),
-      '@stateful': path.resolve('./src/components/stateful'),
-      '@hooks': path.resolve('./src/components/hooks'),
-      '@container': path.resolve('./src/components/container'),
-      '@assets': path.resolve('./src/assets'),
-      '@pages': path.resolve('./src/pages'),
-      '@routers': path.resolve('./src/routers'),
-      '@utils': path.resolve('./src/utils'),
-    },
-  },
+  // resolve: {
+  //   extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
+  //   alias: {
+  //     '@src': path.resolve('./src'),
+  //     '@stateless': path.resolve('./src/components/stateless'),
+  //     '@stateful': path.resolve('./src/components/stateful'),
+  //     '@hooks': path.resolve('./src/components/hooks'),
+  //     '@container': path.resolve('./src/components/container'),
+  //     '@assets': path.resolve('./src/assets'),
+  //     '@pages': path.resolve('./src/pages'),
+  //     '@routers': path.resolve('./src/routers'),
+  //     '@utils': path.resolve('./src/utils'),
+  //   },
+  // },
   // target: process.env.NODE_ENV === 'development' ? 'web' : 'browserslist',
   plugins: [
-    new CleanWebpackPlugin({
-      root: __dirname,
-      verbose: true,
-      dry: false,
-      exclude: [],
-      cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../dist')],
-    }),
+    // new CleanWebpackPlugin({
+    //   root: __dirname,
+    //   verbose: true,
+    //   dry: false,
+    //   exclude: [],
+    //   cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../dist')],
+    // }),
     new Dotenv({
       path: path.resolve(__dirname, '..', dotEnv),
     }),
@@ -103,20 +103,20 @@ const config = {
     //   dependenciesCount: 10000,
     //   percentBy: null,
     // }),
-    new AntdDayjsWebpackPlugin(),
-    new CaseSensitivePathsPlugin(),
-    new CircularDependencyPlugin({
-      exclude: /node_modules/,
-      include: /src/,
-      failOnError: true,
-      allowAsyncCycles: false,
-      cwd: process.cwd(),
-    }),
-    new NodePolyfillPlugin(),
+    // new AntdDayjsWebpackPlugin(),
+    // new CaseSensitivePathsPlugin(),
+    // new CircularDependencyPlugin({
+    //   exclude: /node_modules/,
+    //   include: /src/,
+    //   failOnError: true,
+    //   allowAsyncCycles: false,
+    //   cwd: process.cwd(),
+    // }),
+    // new NodePolyfillPlugin(),
     new WebpackBar(),
-    new ForkTsCheckerWebpackPlugin({
-      async: false,
-    }),
+    // new ForkTsCheckerWebpackPlugin({
+    //   async: false,
+    // }),
     // new ESLintPlugin({
     //   extensions: ['js', 'jsx', 'ts', 'tsx'],
     // }),
