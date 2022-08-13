@@ -5,10 +5,6 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const portfinder = require('portfinder')
 const serverProxy = require('./serverProxy')
-// const DashboardPlugin = require('webpack-dashboard/plugin')
-
-// const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
-// const smp = new SpeedMeasurePlugin()
 
 const devWebpackConfig = merge(common, {
   mode: 'development',
@@ -62,7 +58,7 @@ const devWebpackConfig = merge(common, {
       overlay: false,
     }),
     new HtmlWebpackPlugin({
-      title: '促销中心',
+      title: 'NPM部署组件',
       template: paths.public + '/index.ejs',
       filename: 'index.html',
       inject: 'body',
@@ -78,12 +74,7 @@ const devWebpackConfig = merge(common, {
   },
 })
 
-// module.exports = smp.wrap(devWebpackConfig)
-// module.exports = devWebpackConfig
-
 module.exports = new Promise((resolve, reject) => {
-  // @funboxteam/free-port-finder
-  // detect-port
   portfinder.getPort(
     {
       port: 8080, // 默认8080端口，若被占用，重复+1，直到找到可用端口或到stopPort才停止

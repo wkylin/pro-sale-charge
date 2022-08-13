@@ -1,5 +1,6 @@
 import React from 'react'
-import SaleCharge from './components/saleCharge'
+// import SaleCharge from './components/saleCharge'
+import SaleCharge from 'pro-sale-charge'
 const App = () => {
   return (
     <>
