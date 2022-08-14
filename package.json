@@ -1,6 +1,6 @@
 {
   "name": "pro-sale-charge",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "pro sale charge",
   "keywords": [
     "React",
@@ -158,7 +158,6 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.22.0",
-    "pro-sale-charge": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
