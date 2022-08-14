@@ -3,7 +3,7 @@
 ## 安装
 
    ```base
-     npm install pro-sale-charge --location=global --save
+     npm install pro-sale-charge
    ```
 
 ## 引用
